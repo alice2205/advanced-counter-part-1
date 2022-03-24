@@ -1,0 +1,26 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #2A2C35;
+}
+
+.App{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -75px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 150px;
+  height: 200px;
+  background-color: #63DAFC;
+  color: aliceblue;
+  border-radius: 10px;
+}
