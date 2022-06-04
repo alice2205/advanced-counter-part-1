@@ -43,7 +43,6 @@ function App() {
                         <Button name={'Inc'} callback={addNum} disabled={num === MAX_VALUE}/>
                         <Button name={'Reset'} callback={resetNum} disabled={num === START_VALUE}/>
                     </div>
-
                     <Button name={'Set to local storage'} callback={SetToLocalStorage}/>
                     <Button name={'Get from local storage'} callback={GetFromLocalStorage}/>
                     <Button name={'Clear local storage'} callback={ClearLocalStorage}/>
