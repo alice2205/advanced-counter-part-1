@@ -3,7 +3,7 @@ import s from './Button.module.css'
 
 type ButtonType = {
     name: string
-    disabled:boolean
+    disabled?:boolean
     callback: ()=>void
 }
 

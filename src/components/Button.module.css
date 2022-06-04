@@ -1,5 +1,28 @@
 button{
-    background-color: #63DAFC;
-    height: 30px;
-    width: 70px;
+    width: auto;
+    height: 36px;
+    padding: 0 10px;
+
+    background: #f0f8ff;
+    border-radius: 3px;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+
+    margin: 0 10px 10px 0;
+
+    color: #888;
+    line-height: 36px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #9c89f6;
+    box-shadow: 0px 4px #6b54d3;
+    color: white;
+}
+
+button:active{
+    box-shadow: 0px 0px #717a33;
+    top: 4px;
 }
