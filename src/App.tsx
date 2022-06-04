@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './App.module.css';
 import {Button} from "./components/Button";
 import {Tablo} from "./components/tablo/Tablo";
@@ -8,6 +8,20 @@ function App() {
     const START_VALUE = 0
     const [num, setNum] = useState<number>(START_VALUE)
 
+    useEffect(()=> {
+        let valueAsString = localStorage.getItem('counterValue');
+        if (valueAsString) {
+            let valueAsNumber = JSON.parse(valueAsString);
+            setNum(valueAsNumber)
+        }
+    }, [])
+
+    useEffect(()=> {
+        localStorage.setItem('counterValue', JSON.stringify(num));
+    }, [num])
+
+
+
     const addNum = () => {
         if (num < MAX_VALUE) {
             setNum(num + 1)
@@ -15,23 +29,6 @@ function App() {
     }
     const resetNum = () => {
         setNum(START_VALUE)
-    }
-
-    const SetToLocalStorage = () => {
-        localStorage.setItem('counterValue', JSON.stringify(num))
-    }
-
-    const GetFromLocalStorage = () => {
-        let valueAsString = localStorage.getItem('counterValue');
-        if (valueAsString) {
-            let valueAsNumber = JSON.parse(valueAsString);
-            setNum(valueAsNumber)
-        }
-    }
-
-    const ClearLocalStorage = () => {
-        localStorage.clear();
-        setNum(0)
     }
 
     return (
@@ -43,9 +40,6 @@ function App() {
                         <Button name={'Inc'} callback={addNum} disabled={num === MAX_VALUE}/>
                         <Button name={'Reset'} callback={resetNum} disabled={num === START_VALUE}/>
                     </div>
-                    <Button name={'Set to local storage'} callback={SetToLocalStorage}/>
-                    <Button name={'Get from local storage'} callback={GetFromLocalStorage}/>
-                    <Button name={'Clear local storage'} callback={ClearLocalStorage}/>
                 </div>
             </div>
         </div>
