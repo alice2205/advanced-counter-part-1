@@ -4,15 +4,15 @@ import s from './Button.module.css'
 type ButtonType = {
     name: string
     disabled?:boolean
-    callback: ()=>void
+    callback: () => void
 }
 
 export const Button = (props: ButtonType) => {
+    const callbackHandler = () => {
+        props.callback()
+    }
 
-    return (
-        <div>
-            <button
-               className={s.button} onClick={props.callback} disabled={props.disabled}> {props.name}</button>
-        </div>
-    );
+    return(
+        <button onClick={callbackHandler} className={s.button} disabled={props.disabled}>{props.name}</button>
+    )
 }

@@ -1,12 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from './App.module.css';
 import {Button} from "./components/Button";
 import {Tablo} from "./components/tablo/Tablo";
+import {Input} from "./components/input/Input";
 
 function App() {
-    const MAX_VALUE = 5
-    const START_VALUE = 0
-    const [num, setNum] = useState<number>(START_VALUE)
+    let [minNum, setMinNum] = useState<number>(0)
+    let [maxNum, setMaxNum] = useState<number>(0)
+
+    let [num, setNum] = useState<number>(0)
 
     useEffect(()=> {
         let valueAsString = localStorage.getItem('counterValue');
@@ -15,30 +17,59 @@ function App() {
             setNum(valueAsNumber)
         }
     }, [])
-
     useEffect(()=> {
         localStorage.setItem('counterValue', JSON.stringify(num));
     }, [num])
 
-
+    const setValue = () => {
+        num = minNum;
+        setNum(num);
+        setMaxNum(maxNum)
+        console.log(maxNum)
+        console.log(num)
+    }
 
     const addNum = () => {
-        if (num < MAX_VALUE) {
+        if (num < maxNum) {
             setNum(num + 1)
         }
     }
+
     const resetNum = () => {
-        setNum(START_VALUE)
+        setNum(minNum)
+    }
+
+    const onChangeMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
+        setMaxNum(+e.currentTarget.value)
+    }
+
+    const onChangeMinValue = (e: ChangeEvent<HTMLInputElement>) => {
+        setMinNum(+e.currentTarget.value)
     }
 
     return (
         <div className={s.App}>
             <div className={s.container}>
+                <div className={s.input_block}>
+                    <div className={s.text_input}>Max Value</div>
+                    <Input onChangeCallback={onChangeMaxValue}/>
+                </div>
+                <div className={s.input_block}>
+                    <div className={s.text_input}>Min Value</div>
+                    <Input onChangeCallback={onChangeMinValue}/>
+                </div>
+                <div className={s.cont_button}>
+                    <div className={s.cont_inc_reset}>
+                        <Button name={'Set'} callback={setValue} disabled={minNum === 0}/>
+                    </div>
+                </div>
+            </div>
+            <div className={s.container}>
                 <Tablo num={num}/>
                 <div className={s.cont_button}>
                     <div className={s.cont_inc_reset}>
-                        <Button name={'Inc'} callback={addNum} disabled={num === MAX_VALUE}/>
-                        <Button name={'Reset'} callback={resetNum} disabled={num === START_VALUE}/>
+                        <Button name={'Inc'} callback={addNum}/>
+                        <Button name={'Reset'} callback={resetNum} disabled={num === maxNum} />
                     </div>
                 </div>
             </div>
