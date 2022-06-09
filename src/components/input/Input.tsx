@@ -7,6 +7,6 @@ type InputType = {
 
 export const Input = (props: InputType) => {
     return (
-        <input className={s.input} onChange={props.onChangeCallback} ></input>
+        <input type={'number'} className={s.input} onChange={props.onChangeCallback} ></input>
     );
 }
