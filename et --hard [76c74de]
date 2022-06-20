@@ -1,0 +1,28 @@
+[33m28ee8ea[m[33m ([m[1;36mHEAD -> [m[1;32mgh-pages[m[33m, [m[1;31morigin/gh-pages[m[33m)[m HEAD@{0}: checkout: moving from main to gh-pages
+[33m067be25[m[33m ([m[1;32mmain[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m067be25[m[33m ([m[1;32mmain[m[33m)[m HEAD@{2}: commit: test
+[33m76c74de[m HEAD@{3}: commit: counter with settings
+[33m997f6cf[m HEAD@{4}: reset: moving to 997f6cf
+[33m8398a01[m HEAD@{5}: reset: moving to HEAD
+[33m8398a01[m HEAD@{6}: reset: moving to HEAD
+[33m8398a01[m HEAD@{7}: commit: add-1
+[33med54719[m HEAD@{8}: commit: add-2
+[33me24a72b[m HEAD@{9}: reset: moving to HEAD
+[33me24a72b[m HEAD@{10}: commit: delete-2-new
+[33m6305124[m HEAD@{11}: commit: 2-new
+[33m0337cf7[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{12}: reset: moving to HEAD
+[33m0337cf7[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{13}: checkout: moving from 13604cfb6592f206e1d8c95267d5e26ca3a97b9d to main
+[33m13604cf[m HEAD@{14}: revert: Revert "latest"
+[33m0337cf7[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{15}: checkout: moving from main to 0337cf7
+[33m0337cf7[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{16}: commit: latest
+[33md7000b2[m HEAD@{17}: pull: Merge made by the 'recursive' strategy.
+[33m997f6cf[m HEAD@{18}: commit: localStorage with useEffect
+[33m25191b0[m HEAD@{19}: commit (amend): localStorage without useEffect
+[33m731c402[m HEAD@{20}: pull: Merge made by the 'recursive' strategy.
+[33ma8cdd85[m HEAD@{21}: commit: without localStorage
+[33m25cd67f[m HEAD@{22}: commit: localStorage without useEffect
+[33m3ed726a[m HEAD@{23}: commit: ex
+[33m9dbb030[m HEAD@{24}: Branch: renamed refs/heads/main to refs/heads/main
+[33m9dbb030[m HEAD@{26}: commit: first commit
+[33m374c475[m HEAD@{27}: Branch: renamed refs/heads/master to refs/heads/main
+[33m374c475[m HEAD@{29}: commit (initial): Initialize project using Create React App

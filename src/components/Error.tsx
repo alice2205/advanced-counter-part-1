@@ -4,7 +4,7 @@ import React from "react";
 
 export const Error = () => {
     return (
-        <div>
+        <div style={{color: 'red'}}>
            Error!
         </div>
 
